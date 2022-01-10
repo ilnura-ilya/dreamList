@@ -31,6 +31,12 @@ export class Dream extends Component {
    dreamLi.classList.toggle('crossed');
   }
 
+  delOneDream(e) {
+    let dreamArray = this.state.dreamList;
+    dreamArray.splice(e.index, 1);
+    this.setState({dreamList: dreamArray});
+}
+
  deleteDream(){
    let dreamArray = this.state.dreamList;
    dreamArray = [];
@@ -62,14 +68,14 @@ export class Dream extends Component {
 
       <div className='container'>
           <ul>
-            {this.state.dreamList.map((item, index) => <div className='list'  key={index}><li onClick={this.crossedWord} >{item}</li> 
+            {this.state.dreamList.map((item, index) => <div className='list'  key={index}><li onClick={this.crossedWord} onDoubleClick={(e) => this.delOneDream({index})} >{item}</li> 
             
             </div> )}
           </ul>
       </div>
 
       <div className='container'>  
-        <button className='btn delete' onClick={() => this.deleteDream()}>DELETE ALL</button>
+        <button className='btn delete'  onClick={() => this.deleteDream()} >DELETE ALL</button>
       </div> 
 
       </form>
