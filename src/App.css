@@ -23,9 +23,18 @@ h1{
 }
 
 .crossed{
-  text-decoration: line-through 2px #cca247;
+  text-decoration: line-through 2px #b18525;
   list-style-image: url('./trash.png');
   font-size: 16px;
+  -webkit-text-decoration: line-through;
+  -webkit-text-decoration-thickness: 2px;
+  -webkit-text-decoration-color: #b18525;
+  -moz-text-decoration: line-through;
+  -moz-text-decoration-thickness: 2px;
+  -moz-text-decoration-color: #b18525;
+  -ms-text-decoration: line-through;
+  -ms-text-decoration-thickness: 2px;
+  -ms-text-decoration-color: #b18525;
 }
 
 ul, li{
